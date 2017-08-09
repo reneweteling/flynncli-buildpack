@@ -6,4 +6,4 @@ set -e
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-L=/usr/local/bin/flynn && curl -sSL -A "`uname -sp`" https://dl.flynn.io/cli | zcat >$L && chmod +x $L
+sudo L=/usr/local/bin/flynn && curl -sSL -A "`uname -sp`" https://dl.flynn.io/cli | zcat >$L && chmod +x $L
