@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "flynncli-buildpack"
+exit 0
