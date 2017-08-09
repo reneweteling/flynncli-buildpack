@@ -8,6 +8,5 @@ CACHE_DIR=$2
 
 L=/usr/local/bin/flynn
 
-curl -sSL -A "`uname -sp`" https://dl.flynn.io/cli $CACHE_DIR/flynn
-zcat $CACHE_DIR/flynn >$L 
+curl -sSL -A "`uname -sp`" https://dl.flynn.io/cli $L
 chmod +x $L
