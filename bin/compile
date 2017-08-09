@@ -9,5 +9,5 @@ CACHE_DIR=$2
 BIN_PATH="$BUILD_DIR/bin"
 FLYNN_PATH="$BIN_PATH/flynn"
 
-wget https://dl.flynn.io/cli $FLYNN_PATH
+wget -O $FLYNN_PATH https://dl.flynn.io/cli 
 chmod +x $FLYNN_PATH
