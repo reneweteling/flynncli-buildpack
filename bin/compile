@@ -6,7 +6,8 @@ set -e
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-L=/usr/local/bin/flynn
+BIN_PATH="$BUILD_DIR/bin"
+FLYNN_PATH="$BIN_PATH/flynn"
 
-curl -sSL -A "`uname -sp`" https://dl.flynn.io/cli $L
-chmod +x $L
+curl -sSL -A "`uname -sp`" https://dl.flynn.io/cli $FLYNN_PATH
+chmod +x $FLYNN_PATH
