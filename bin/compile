@@ -8,8 +8,19 @@ CACHE_DIR=$2
 
 BIN_PATH="$BUILD_DIR/bin"
 FLYNN_PATH="$BIN_PATH/flynn"
+FLYNN_CACHE="$CACHE_DIR/flynn"
 
-# wget -O $FLYNN_PATH https://dl.flynn.io/cli 
-# chmod +x $FLYNN_PATH
+# curl -sSL -A "`uname -sp`" https://dl.flynn.io/cli | zcat >$FLYNN_PATH && chmod +x $FLYNN_PATH
 
-curl -sSL -A "`uname -sp`" https://dl.flynn.io/cli | zcat >$FLYNN_PATH && chmod +x $FLYNN_PATH
+if [ -f $FLYNN_CACHE ]; then
+  echo "-----> Using flynncli tar from cache"
+else
+  echo "-----> Downloading flynncli to cache dir"
+  curl -L https://dl.flynn.io/cli -o $FLYNN_CACHE
+fi
+
+echo "-----> Copy file"
+cp $FLYNN_CACHE $FLYNN_PATH
+
+echo "-----> Setting permissions"
+chmod +x $FLYNN_PATH
