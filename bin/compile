@@ -8,7 +8,7 @@ CACHE_DIR=$2
 
 BIN_PATH="$BUILD_DIR/bin"
 FLYNN_PATH="$BIN_PATH/flynn"
-FLYNN_CACHE="$CACHE_DIR/flynn_cache"
+FLYNN_CACHE="$CACHE_DIR/flynn-cache"
 
 if [ -f $FLYNN_CACHE ]; then
   echo "-----> Using flynncli from cache"
