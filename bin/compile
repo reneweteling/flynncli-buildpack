@@ -14,7 +14,7 @@ if [ -f $FLYNN_CACHE ]; then
   echo "-----> Using flynncli from cache"
 else
   echo "-----> Downloading flynncli to cache dir"
-  curl -L https://dl.flynn.io/cli -o $FLYNN_CACHE
+  curl -sSL https://dl.flynn.io/cli | zcat > $FLYNN_CACHE
 fi
 
 echo "-----> Copy file"
